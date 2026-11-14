@@ -68,16 +68,20 @@ public class Pokemon : MonoBehaviour
     {
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        //adds all the moves to a list so that we can acssess them later, 
+        //this is how i would do it
+        //if you have a better way feel free to do it 
         AddToListMoves(move1);
         AddToListMoves(move2);
         AddToListMoves(move3);
         AddToListMoves(move4);
-
+        //add to a list to check later when being attacked
         AddToListWeak(weakToType1);
         AddToListWeak(weakToType2);
         AddToListWeak(weakToType3);
         AddToListWeak(weakToType4);
-
+        //add to a list to check later when being attacked
         AddToListResist(resistantToType1);
         AddToListResist(resistantToType2);
         AddToListResist(resistantToType3);
@@ -86,6 +90,7 @@ public class Pokemon : MonoBehaviour
     }
     void Update()
     {
+        // check if player is dead
         if (currentHealth <= 0)
         {
             Debug.Log("dead");
@@ -96,7 +101,11 @@ public class Pokemon : MonoBehaviour
     }
     void FixedUpdate()
     {
-        
+        // this is the code for creating the health bar, 
+        // i did it by creating the health bar with current health and then deleting it 
+        // i thought this would be the easiest way but it is definetly not 
+        // probably should have just done one box that shrinks with health but it works
+
         if (currentHealth > 0)
         {
             GameObject healthShown = Instantiate(healthBar,new Vector3(transform.position.x + (healthBar.transform.localScale.x * ((float)currentHealth / (float)maxHealth)/2)-0.5f, transform.position.y + 1, transform.position.z), Quaternion.identity);

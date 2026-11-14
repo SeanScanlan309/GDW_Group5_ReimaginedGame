@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
     
     void Update()
     {
+        // this was to cypcle through UI,
+        // I relise now that this is stupid cause we can just use buttons
+        //
         moveInput = moveAction.ReadValue<Vector2>();
         if (moveAction.WasPressedThisFrame())
         {
@@ -47,6 +50,7 @@ public class Player : MonoBehaviour
             selection = selectionMax;
         }
         Debug.Log(selection);
+        //test to show the health bar works correctly
         if (enterAction.WasPressedThisFrame())
         {
             selfPokemon.currentHealth--;
