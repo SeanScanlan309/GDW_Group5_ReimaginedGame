@@ -51,10 +51,10 @@ public class Player : MonoBehaviour
         }
         Debug.Log(selection);
         //test to show the health bar works correctly
-        if (enterAction.WasPressedThisFrame())
-        {
-            selfPokemon.currentHealth--;
-        }
+        //if (enterAction.WasPressedThisFrame())
+        //{
+        //    selfPokemon.currentHealth--;
+        //}
 
     }
 }
