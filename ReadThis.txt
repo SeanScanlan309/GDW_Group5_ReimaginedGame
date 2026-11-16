@@ -1,0 +1,2 @@
+If the buttons are not showing up you need to re adjust them to fit in the canvas
+select all the S1-S4 in canvas and move them together, they should end up in side of the black square at the bottom half of the screen
